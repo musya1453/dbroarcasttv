@@ -1,0 +1,15 @@
+h1 {
+  font-size: 48px;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  @include transform(translateX(-50%));
+  width: 900px;
+  text-align: center;
+  font-family: $RUSBoycott;
+  background: linear-gradient(#B5211A, #ED4A24);
+  -webkit-background-clip: text;
+  color: transparent;
+
+}
