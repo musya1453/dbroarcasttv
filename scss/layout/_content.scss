@@ -11,5 +11,166 @@ h1 {
   background: linear-gradient(#B5211A, #ED4A24);
   -webkit-background-clip: text;
   color: transparent;
+}
 
+.site-container {
+  width: 1290px;
+  margin: 0 auto;
+}
+
+.header-wrapper {
+  background: #000;
+  @include box-shadow(0 0 92px 9px #000);
+
+  .site-container {
+    position: relative;
+    z-index: 10;
+    height: 61px;
+
+    .logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+    }
+
+    &:before {
+      @include pseudo-block($left: 200px, $top: 0);
+      background-image: image-url('bg/menu.png');
+      height: 61px;
+      width: 1300px;
+      z-index: -1;
+    }
+
+    &:after {
+      @include pseudo-block($left: -106%, $top: 0);
+      background-image: image-url('bg/menu-l.png');
+      height: 61px;
+      width: 1385px;
+      z-index: -1;
+    }
+  }
+
+  .nav {
+    position: absolute;
+    top: 50%;
+    @include transform(translateY(-50%));
+    left: 210px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline-block;
+
+      &:first-child a:before {
+        left: -19px;
+      }
+
+      &:nth-child(3) a:before {
+        left: -17px;
+      }
+
+      &:nth-child(4) a:before {
+        left: -18px;
+      }
+
+      &.disable {
+
+
+        a {
+          position: relative;
+
+          .desc {
+            position: absolute;
+            left: 50%;
+            top: 90%;
+            @include transform(translateX(-50%));
+            background: #000000;
+            color: #9D9D9E;
+            font-size: 8px;
+            width: 125px;
+            padding: 10px;
+            z-index: 5;
+            @include transition(all .3s);
+            overflow: hidden;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+          }
+
+          &:hover {
+            color: #9D9D9E;
+
+            .desc {
+              height: 40px;
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+
+          &:before {
+            background: image-url('bg/dis-menu.png');
+          }
+        }
+      }
+
+      a {
+        display: block;
+        font-family: $Romul;
+        font-size: 17px;
+        color: #9D9D9E;
+        padding: 19px 33px;
+        text-decoration: none;
+        text-shadow: -2px 1px 2px #0c0b0d;
+        @include transition(all .3s);
+        position: relative;
+
+        &:before {
+          @include pseudo-block($top: 0, $left: -12px);
+          background: image-url('bg/active-menu.png');
+          width: 188px;
+          height: 61px;
+          opacity: 0;
+          visibility: hidden;
+          z-index: -1;
+          @include transition(all .3s);
+        }
+
+        &:hover {
+          color: #fff;
+
+          &:before {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.page-home {
+
+  .content-wrapper {
+    padding: 90px 0;
+
+    .left-part {
+      float: left;
+      width: 300px;
+    }
+
+    .middle-part {
+      float: left;
+      width: 690px;
+    }
+
+    .right-part {
+      float: left;
+      width: 300px;
+    }
+  }
 }

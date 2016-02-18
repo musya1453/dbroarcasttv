@@ -11,6 +11,32 @@ body {
   @include background-size(contain);
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
+  cursor: url('../images/icons/cursor.png'), auto;
+
+  &.page-home {
+    background: image-url('bg/bg.jpg');
+
+    &:before {
+      @include pseudo-block($top: 0, $left: 0, $right: 0, $bottom: 0);
+      background: image-url('bg/smoke.png');
+      @include animation(smoke 50s infinite linear);
+      background-size: cover;
+      z-index: -1;
+    }
+  }
+
+  @keyframes smoke {
+    0% {
+      @include transform(translateX(0))
+    }
+    50% {
+      @include transform(translateX(-70%))
+    }
+    100% {
+      @include transform(translateX(0))
+    }
+  }
 }
 
 .clearfix {
@@ -34,4 +60,19 @@ body {
 
 .pull-right {
   float: right;
+}
+
+.outer-wrapper {
+  overflow-x: hidden;
+  height: 100%;
+  min-height: 100%;
+}
+
+* {
+  @include box-sizing(border-box);
+}
+
+a, iframe {
+  cursor: url('../images/icons/cursor.png'), auto;
+  outline: none !important;
 }
