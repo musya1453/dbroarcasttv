@@ -12,6 +12,13 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Larsseit-Regular';
+  src: url("../fonts/Larsseit-Regular.eot");
+  src: url("../fonts/Larsseit-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Larsseit-Regular.woff") format("woff"), url("../fonts/Larsseit-Regular.ttf") format("truetype"), url("../fonts/Larsseit-Regular.svg#Larsseit-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -398,19 +405,19 @@ body {
   min-height: 100%;
   height: 100%;
   font-size: 14px;
-  background-color: #000;
   background-image: url('../images/bg/dota2.jpg');
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  -webkit-background-size: contain;
-  background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
   cursor: url("../images/icons/cursor.png"), auto;
+  font-family: "Larsseit-Regular";
 }
 body.page-home {
-  background: url('../images/bg/bg.jpg');
+  background-image: url('../images/bg/bg.jpg');
 }
 body.page-home:before {
   content: "";
@@ -479,8 +486,16 @@ body.page-home:before {
   box-sizing: border-box;
 }
 
+a {
+  color: #9D9D9E;
+}
+
 a, iframe {
   cursor: url("../images/icons/cursor.png"), auto;
+  outline: none !important;
+}
+
+input {
   outline: none !important;
 }
 
@@ -566,10 +581,10 @@ h1 {
   left: -19px;
 }
 .header-wrapper .nav li:nth-child(3) a:before {
-  left: -17px;
+  left: -15px;
 }
 .header-wrapper .nav li:nth-child(4) a:before {
-  left: -18px;
+  left: -15px;
 }
 .header-wrapper .nav li.disable a {
   position: relative;
@@ -647,18 +662,189 @@ h1 {
   visibility: visible;
 }
 
-.page-home .content-wrapper {
-  padding: 90px 0;
+.menu-title {
+  display: block;
+  background: #010203;
+  color: #a3afa3;
+  font-size: 19px;
+  padding: 7px 17px;
+  text-transform: uppercase;
 }
-.page-home .content-wrapper .left-part {
+
+.content-wrapper {
+  padding-bottom: 180px;
+}
+.content-wrapper:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.content-wrapper .main-menu {
+  margin-bottom: 20px;
+}
+.content-wrapper .main-menu ul {
+  margin: 0;
+  padding: 15px 15px 40px 15px;
+  background-image: url('../images/bg/menu-bg.jpg');
+  list-style: none;
+  border-bottom: 1px solid #0b0e13;
+  border-right: 1px solid #0b0e13;
+  border-top: 1px solid #2b3339;
+}
+.content-wrapper .main-menu ul li {
+  margin-bottom: 7px;
+}
+.content-wrapper .main-menu ul li a {
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  padding: 5px 7px;
+  background: rgba(6, 8, 14, 0.58);
+  border-top: 1px solid #040509;
+  border-bottom: 1px solid #28323A;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.content-wrapper .main-menu ul li a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20%;
+  background: url('../images/bg/menu-before.png');
+  width: 374px;
+  height: 62px;
+  -moz-animation: smoke 30s infinite linear;
+  -webkit-animation: smoke 30s infinite linear;
+  animation: smoke 30s infinite linear;
+  opacity: 0;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.content-wrapper .main-menu ul li a:hover {
+  -moz-box-shadow: inset 0 0 33px 1px rgba(0, 149, 255, 0.38);
+  -webkit-box-shadow: inset 0 0 33px 1px rgba(0, 149, 255, 0.38);
+  box-shadow: inset 0 0 33px 1px rgba(0, 149, 255, 0.38);
+}
+.content-wrapper .main-menu ul li a:hover:before {
+  opacity: 1;
+}
+.content-wrapper .main-menu ul li a .text {
+  display: inline-block;
+  vertical-align: middle;
+}
+.content-wrapper .main-menu ul li a img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 34px;
+}
+.content-wrapper .main-menu ul li a span {
+  display: block;
+  font-size: 12px;
+  color: #50965e;
+  font-weight: bold;
+}
+.content-wrapper .left-part {
   float: left;
   width: 300px;
+  padding-right: 17px;
 }
-.page-home .content-wrapper .middle-part {
+.content-wrapper .middle-part {
   float: left;
   width: 690px;
 }
-.page-home .content-wrapper .right-part {
+.content-wrapper .right-part {
   float: left;
   width: 300px;
+  padding-left: 17px;
+}
+.content-wrapper .gradient {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.95) 100%);
+}
+.content-wrapper .ad-items .item {
+  margin-bottom: 17px;
+  text-align: center;
+}
+.content-wrapper .ad-items .item img {
+  max-width: 100%;
+}
+.content-wrapper .form-search {
+  margin-bottom: 17px;
+}
+.content-wrapper .form-search form {
+  position: relative;
+  padding: 7px;
+}
+.content-wrapper .form-search form .form-text {
+  width: 100%;
+  font-size: 16px;
+  padding: 7px;
+  background: rgba(6, 8, 14, 0.58);
+  border-top: 1px solid #040509;
+  border-bottom: 1px solid #28323A;
+  border-left: none;
+  border-right: none;
+  color: #9D9D9E;
+}
+.content-wrapper .form-search form .form-submit {
+  position: absolute;
+  width: 40px;
+  height: 35px;
+  background-color: rgba(22, 37, 42, 0.22);
+  background-image: url('../images/icons/search.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none;
+  text-indent: -9999px;
+  font-size: 0;
+  line-height: 0;
+  background-size: 50%;
+  top: 7px;
+  right: 7px;
+}
+.content-wrapper .news-last .news {
+  padding: 7px 15px;
+  margin-bottom: 17px;
+}
+.content-wrapper .news-last .news .item {
+  color: #9D9D9E;
+  text-decoration: none;
+  padding: 13px 0;
+  display: block;
+  border-bottom: 1px solid #34383d;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.content-wrapper .news-last .news .item:hover {
+  color: #fff;
+}
+.content-wrapper .news-last .news .item:last-child {
+  border-bottom: none;
+}
+.content-wrapper .news-last .news .item .img {
+  display: inline-block;
+  vertical-align: middle;
+}
+.content-wrapper .news-last .news .item .text {
+  display: inline-block;
+  vertical-align: middle;
+  width: 200px;
+  padding-left: 7px;
+}
+
+.page-home .content-wrapper {
+  padding: 90px 0;
 }

@@ -70,15 +70,14 @@ h1 {
       }
 
       &:nth-child(3) a:before {
-        left: -17px;
+        left: -15px;
       }
 
       &:nth-child(4) a:before {
-        left: -18px;
+        left: -15px;
       }
 
       &.disable {
-
 
         a {
           position: relative;
@@ -153,24 +152,197 @@ h1 {
   }
 }
 
+.menu-title {
+  display: block;
+  background: #010203;
+  color: #a3afa3;
+  font-size: 19px;
+  padding: 7px 17px;
+  text-transform: uppercase;
+}
+
+.content-wrapper {
+  padding-bottom: 180px;
+  @include clearfix();
+
+  .main-menu {
+    margin-bottom: 20px;
+
+    ul {
+      margin: 0;
+      padding: 15px 15px 40px 15px;
+      background-image: image-url('bg/menu-bg.jpg');
+      list-style: none;
+      border-bottom: 1px solid #0b0e13;
+      border-right: 1px solid #0b0e13;
+      border-top: 1px solid #2b3339;
+
+      li {
+        margin-bottom: 7px;
+
+        a {
+          display: block;
+          text-decoration: none;
+          font-size: 20px;
+          color: #fff;
+          padding: 5px 7px;
+          background: rgba(6, 8, 14, 0.58);;
+          border-top: 1px solid #040509;
+          border-bottom: 1px solid #28323A;
+          @include transition(all .3s);
+          position: relative;
+          overflow: hidden;
+
+          &:before {
+            @include pseudo-block($top: 0, $left: 20%);
+            background: image-url('bg/menu-before.png');
+            width: 374px;
+            height: 62px;
+            @include animation(smoke 30s infinite linear);
+            opacity: 0;
+            @include transition(all .3s);
+          }
+
+          &:hover {
+            @include box-shadow(inset 0 0 33px 1px rgba(0, 149, 255, 0.38));
+
+            &:before {
+              opacity: 1;
+            }
+          }
+
+          .text {
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          img {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+            width: 34px;
+          }
+
+          span {
+            display: block;
+            font-size: 12px;
+            color: #50965e;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  .left-part {
+    float: left;
+    width: 300px;
+    padding-right: 17px;
+  }
+
+  .middle-part {
+    float: left;
+    width: 690px;
+  }
+
+  .right-part {
+    float: left;
+    width: 300px;
+    padding-left: 17px;
+  }
+
+  .sub-menu-items {
+
+  }
+
+  .gradient {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.95) 100%);
+  }
+
+  .ad-items .item {
+    margin-bottom: 17px;
+    text-align: center;
+
+    img {
+      max-width: 100%
+    }
+  }
+
+  .form-search {
+    margin-bottom: 17px;
+
+    form {
+      position: relative;
+      padding: 7px;
+
+      .form-text {
+        width: 100%;
+        font-size: 16px;
+        padding: 7px;
+        background: rgba(6, 8, 14, 0.58);
+        border-top: 1px solid #040509;
+        border-bottom: 1px solid #28323A;
+        border-left: none;
+        border-right: none;
+        color: #9D9D9E;
+      }
+
+      .form-submit {
+        position: absolute;
+        width: 40px;
+        height: 35px;
+        background-color: rgba(22, 37, 42, 0.22);
+        background-image: image-url('icons/search.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        border: none;
+        @include text-hide();
+        background-size: 50%;
+        top: 7px;
+        right: 7px;
+      }
+    }
+  }
+
+  .news-last .news {
+    padding: 7px 15px;
+    margin-bottom: 17px;
+
+    .item {
+      color: #9D9D9E;
+      text-decoration: none;
+      padding: 13px 0;
+      display: block;
+      border-bottom: 1px solid #34383d;
+      @include transition(all .3s);
+
+      &:hover {
+        color: #fff;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .img {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .text {
+        display: inline-block;
+        vertical-align: middle;
+        width: 200px;
+        padding-left: 7px;
+      }
+    }
+
+  }
+}
+
 .page-home {
 
   .content-wrapper {
     padding: 90px 0;
-
-    .left-part {
-      float: left;
-      width: 300px;
-    }
-
-    .middle-part {
-      float: left;
-      width: 690px;
-    }
-
-    .right-part {
-      float: left;
-      width: 300px;
-    }
   }
 }
