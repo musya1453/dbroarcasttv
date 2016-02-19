@@ -161,6 +161,10 @@ h1 {
   text-transform: uppercase;
 }
 
+.ember-chat-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.95) 100%) !important;
+}
+
 .content-wrapper {
   padding-bottom: 180px;
   @include clearfix();
@@ -252,6 +256,14 @@ h1 {
   }
 
   .sub-menu-items {
+
+    .sub-menu {
+      color: #A3AFA3;
+
+      .text {
+        padding: 8px;
+      }
+    }
 
   }
 

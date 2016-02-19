@@ -495,6 +495,10 @@ a, iframe {
   outline: none !important;
 }
 
+.video {
+  margin-bottom: 15px;
+}
+
 input {
   outline: none !important;
 }
@@ -671,6 +675,10 @@ h1 {
   text-transform: uppercase;
 }
 
+.ember-chat-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.95) 100%) !important;
+}
+
 .content-wrapper {
   padding-bottom: 180px;
 }
@@ -768,6 +776,12 @@ h1 {
   float: left;
   width: 300px;
   padding-left: 17px;
+}
+.content-wrapper .sub-menu-items .sub-menu {
+  color: #A3AFA3;
+}
+.content-wrapper .sub-menu-items .sub-menu .text {
+  padding: 8px;
 }
 .content-wrapper .gradient {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.95) 100%);

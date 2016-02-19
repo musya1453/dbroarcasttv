@@ -72,7 +72,7 @@ body {
   @include box-sizing(border-box);
 }
 
-a{
+a {
   color: #9D9D9E;
 }
 
@@ -81,6 +81,10 @@ a, iframe {
   outline: none !important;
 }
 
-input{
+.video {
+  margin-bottom: 15px;
+}
+
+input {
   outline: none !important;
 }
